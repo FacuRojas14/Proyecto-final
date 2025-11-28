@@ -64,7 +64,7 @@ public void keyPressed()
         nombreSocio = campoTexto.texto;
         mostrarEnPantalla("Nombre socio: " + nombreSocio);
         campoTexto = new CampoTexto(width* 4/5 + 20, height - 80, width* 9/50 - 40, 40, "Ingrese codigo de  socio");
-        estadoMenu = 10; //PONER PORQUE LLAMAMOS A MENU=10
+        estadoMenu = 10;
       }
 //=======================================================
       else if (estadoMenu == 4)
@@ -74,7 +74,6 @@ public void keyPressed()
   if (patenteNueva.equals(""))
   {
     // Usuario presionó ENTER sin escribir nada
-   
     // Validar que tenga al menos UNA patente
     if (patenteExtra.equals(""))
     {
@@ -131,8 +130,16 @@ public void keyPressed()
 else if (estadoMenu == 10)
 {
   codigoSocio = campoTexto.texto;
+  
+  // VERIFICAR SI EL CÓDIGO YA EXISTE
+  if (codigoSocioExiste(codigoSocio))
+  {
+    mostrarEnPantalla("ERROR: Ya existe un socio con ese código");
+    campoTexto = new CampoTexto(width * 4/5 + 20, height - 80, width * 9/50 - 40, 40, "Ingrese otro código de socio");
+    return;  // Vuelve a pedir el código
+  }
+  
   mostrarEnPantalla("Código del socio: " + codigoSocio);
-  // Inicializar variable de patentes (SOLO UNA)
   patenteExtra = "";
   campoTexto = new CampoTexto(width * 4/5 + 20, height - 80, width * 9/50 - 40, 40, "Ingrese patente (ENTER vacío para terminar)");
   estadoMenu = 4;
