@@ -129,7 +129,7 @@ void draw()
   
   // DIBUJAR INTERFAZ
   dibujarNumerosLugares();
-  dibujarInfosobre();
+  dibujarInfoSobre();
   dibujarPanelLateral();
   dibujarBotones();
   dibujarIndicadorModoManual();
@@ -211,7 +211,7 @@ class RegistroAuto
   }
  
   // Convertir a String para backup (separado por ;)
-  String convertirastring()
+  String ConvertirAString()
   {
     if (!ocupado)
     {
@@ -221,7 +221,7 @@ class RegistroAuto
   }
  
   // Cargar desde String de backup
-  void descombertirString(String linea)
+  void DesconvierteString(String linea)
   {
     String[] partes = split(linea, ';');
     if (partes.length >= 8)
