@@ -1,9 +1,3 @@
-// ============================================
-// PESTAÑA: Inicializacion
-// Contiene todas las funciones de inicialización del programa
-// ============================================
-
-// Carga todas las imágenes necesarias
 void cargarImagenes()
 {
   parking = loadImage("Parking.jpg");
@@ -11,16 +5,16 @@ void cargarImagenes()
   auto_amarillo_arriba = loadImage("auto_amarillo.jpg");
   auto_rojo_abajo = loadImage("auto_rojo_abajo.jpg");
   auto_amarillo_abajo = loadImage("auto_amarillo_abajo.jpg");
-  println(" Imágenes cargadas correctamente");
+  println("✓ Imágenes cargadas correctamente");
 }
 
 // Inicializa la conexión con Arduino
 void inicializarArduino()
 {
   printArray(Serial.list()); // muestra los puertos disponibles
-  miArduino = new Serial(this, Serial.list()[1], 9600);
+  miArduino = new Serial(this, Serial.list()[4], 9600);
   tiempoInicioConexion = millis();
-  println(" Conexión con Arduino establecida");
+  println("✓ Conexión con Arduino establecida");
 }
 
 // Inicializa el array de lugares de estacionamiento
@@ -30,7 +24,7 @@ void inicializarLugares()
   {
     lugares[i] = new RegistroAuto();
   }
-  println(" Lugares de estacionamiento inicializados");
+  println("✓ Lugares de estacionamiento inicializados");
 }
 
 // Inicializa la lista de socios
@@ -38,7 +32,7 @@ void inicializarSocios()
 {
   socios = new ArrayList<String[]>();
   cargarSocios();
-  println(" Sistema de socios inicializado");
+  println("✓ Sistema de socios inicializado");
 }
 
 // Crea todos los botones del menú principal
@@ -55,7 +49,7 @@ void crearBotonesMenu()
   botonSalirModoManual = new Boton(x, 480, ancho, 50, "Salir del modo manual");
   botonResumen = new Boton(x, 550, ancho, 50, "Resumen");
   
-  println(" Botones del menú creados");
+  println("✓ Botones del menú creados");
 }
 
 // Crea los botones del menú de resumen
@@ -67,7 +61,7 @@ void crearBotonesResumen()
   botonHistorico = new Boton(width/2 + 20, height/2 + 20, 180, 50, "Histórico");
   botonCerrarResumen = new Boton(width/2 - 60, height/2 + 100, 120, 35, "Cerrar");
   
-  println(" Botones de resumen creados");
+  println("✓ Botones de resumen creados");
 }
 
 // Inicializa el sistema de alertas
@@ -77,7 +71,7 @@ void inicializarAlertas()
   {
     alertaMostrada[i] = false;
   }
-  println(" Sistema de alertas inicializado");
+  println("Sistema de alertas inicializado");
 }
 
 // Carga los datos guardados
@@ -85,5 +79,5 @@ void cargarDatosGuardados()
 {
   cargarBackup();
   verificarArchivoHistorial();
-  println(" Datos guardados cargados");
+  println("Datos guardados cargados");
 }
