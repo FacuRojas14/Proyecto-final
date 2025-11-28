@@ -55,3 +55,16 @@ void agregarPatenteASocio(String nombre, String nuevaPatente)
   }
   mostrarEnPantalla("No se encontró el socio con ese nombre.");
 }
+
+
+boolean codigoSocioExiste(String codigo)
+{
+  for (String[] s : socios)
+  {
+    if (s.length >= 2 && s[1].equalsIgnoreCase(codigo))
+    {
+      return true;
+    }
+  }
+  return false;
+}
