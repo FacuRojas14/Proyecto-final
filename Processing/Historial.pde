@@ -31,7 +31,7 @@ void guardarEnHistorial(String patente, float monto, String tipo, int lugar)
   
   // Guardar todo de nuevo
   saveStrings("historial.txt", lineas);
-  println("Guardado en historial: " + registro);
+  println(" Guardado en historial: " + registro);
 }
 
 // Guarda una marca especial en el historial (ej: activación de modo manual)
@@ -119,7 +119,7 @@ void calcularEstadisticas(String periodo)
       else if (tipo.equals("SALIDA"))
       {
         totalSalidas++;
-        // Reemplazar coma por punto para parsear correctamente
+        // Reemplazar coma por punto para pasar correctamente
         String montoStr = partes[5].replace("$", "").replace(" ", "").replace(",", ".").trim();
         if (!montoStr.equals("-") && !montoStr.equals("") && montoStr.length() > 0)
         {
