@@ -27,7 +27,7 @@ void dibujarNumerosLugares()
 }
 
 // Dibuja la información del auto cuando el mouse pasa sobre él
-void dibujarInfosobre()
+void dibujarInfoSobre()
 {
   for (int i = 0; i < 8; i++)
   {
@@ -193,7 +193,7 @@ void dibujarIndicadorModoManual()
   text("MODO MANUAL ACTIVADO", 20, 28);
 }
 
-// Actualiza y dibuja la fecha y hora
+// Actualiza la fecha y hora
 void dibujarFechaHora()
 {
   // Actualizar solo cuando cambia el segundo
