@@ -4,7 +4,7 @@ void guardarBackup()
   String[] lineas = new String[8];
   for (int i = 0; i < 8; i++)
   {
-    lineas[i] = lugares[i].convertirastring();
+    lineas[i] = lugares[i].ConvertirAString();
   }
   saveStrings("backup.txt", lineas);
   println("Backup guardado correctamente.");
@@ -23,7 +23,7 @@ void cargarBackup()
  
   for (int i = 0; i < min(lineas.length, 8); i++)
   {
-    lugares[i].descombertirString(lineas[i]);
+    lugares[i].DesconvierteString(lineas[i]);
   }
   actualizarEstadoEstacionamiento();
  
