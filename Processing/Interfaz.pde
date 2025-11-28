@@ -3,7 +3,7 @@ class Boton
 {
   float x, y, w, h;
   String texto;
-  boolean sobre = false; // indica si el mouse está encima del botón
+  boolean Sobre = false; // indica si el mouse está encima del botón
 
   // Constructor: asigna la ubicación del botón y el texto
   Boton(float x, float y, float w, float h, String texto)
@@ -18,9 +18,9 @@ class Boton
   // Dibuja el botón en pantalla
   void dibujar()
   {
-    sobre = mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h; // detecta si el mouse está sobre el botón
+    Sobre = mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h; // detecta si el mouse está sobre el botón
     
-    if (sobre)
+    if (Sobre)
     {
       fill(color(80, 180, 255));  // Si el mouse está encima: azul
     } 
