@@ -27,7 +27,7 @@ void serialEvent(Serial p)
       miArduino.write("Lugar:" + lugarAsignado + "\n");
       mostrarEnPantalla("Enviado a Arduino → Lugar:" + lugarAsignado);
    }
-   else if (dato.startsWith("Entrada:"))
+ else if (dato.startsWith("Entrada:"))
 {
   String codigoIngresado = dato.substring(8).trim(); // obtiene el código después de "Entrada:"
   mostrarEnPantalla("Código ingresado desde Arduino: " + codigoIngresado);
@@ -71,12 +71,12 @@ else if (dato.startsWith("Salida:"))
 {
   String codigoIngresado = dato.substring(7).trim();
   mostrarEnPantalla("Código de salida ingresado desde Arduino: " + codigoIngresado);
- 
+  //delay(1000);
   // Buscar si el código pertenece a algún socio
   boolean encontrado = false;
   String nombreSocio = "";
   String[] patentesSocio = null;  //GUARDAMOS TODO EL ARRAY
- 
+
   for (String[] s : socios)
   {
     if (s.length >= 2 && s[1].equals(codigoIngresado))
@@ -87,7 +87,7 @@ else if (dato.startsWith("Salida:"))
       break;
     }
   }
- 
+
   if (encontrado)
   {
     //Buscar si ALGUNA DE LAS PATENTES del socio está estacionada
@@ -110,12 +110,12 @@ else if (dato.startsWith("Salida:"))
         if (lugarEncontrado != -1) break;
       }
     }
-   
+
     if (lugarEncontrado != -1)
     {
       // Socio tiene un auto estacionado, procesar salida
       miArduino.write("SalidaSocio:" + nombreSocio + "\n");
-     
+
       //USAMOS LA PATENTE, NO EL NOMBRE
       int lugar = SalidaAuto(patenteEncontrada);
       if (lugar != -1)
@@ -138,7 +138,5 @@ else if (dato.startsWith("Salida:"))
     mostrarEnPantalla("Código no válido: " + codigoIngresado);
   }
 }
-
-  // Podés hacer alguna acción, por ejemplo mostrar mensaje en pantalla
 }
 }
