@@ -29,7 +29,7 @@ void BarreraControl::abrir() {
 	digitalWrite(pinLed, LOW);
 }
 
-// Movimiento de negación (como "abrirno" original)
+// Movimiento de negaciÃ³n (como "abrirno" original)
 void BarreraControl::moverNegacion() {
 	for (int i = 0; i < 3; i++) {
 		servo->write(60);
