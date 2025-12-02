@@ -15,10 +15,10 @@ public:
 	// Constructor
 	BarreraControl(Servo* servoBarrera, int led = 4);
 	
-	// Métodos públicos
+	// MÃ©todos pÃºblicos
 	void configurar(int pin, int anguloCerrado = 0, int anguloAbierto = 90);
-	void abrir(); // Abre, espera 1 segundo y cierra (como tu función original)
-	void moverNegacion(); // La función "abrirno" del código original
+	void abrir(); // Abre, espera 1 segundo y cierra (como tu funciÃ³n original)
+	void moverNegacion(); // La funciÃ³n "abrirno" del cÃ³digo original
 };
 
 #endif
