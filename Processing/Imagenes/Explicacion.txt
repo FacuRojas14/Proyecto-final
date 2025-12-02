@@ -1,0 +1,1 @@
+Lo que tendra que hacer es donde guarde el codigo de processing en esa misma carpeta crear una carpeta llamada data y guardar todas las imagenes
